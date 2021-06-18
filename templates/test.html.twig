@@ -1,0 +1,17 @@
+{% extends 'base.html.twig' %}
+
+
+{% block main %}
+    <h1>Test form data</h1>
+
+    <p>No of dices </p>
+
+    {{ dices }}
+
+    {{ diceHand.roll() }}
+
+    <p>get last dicehand roll:</p>
+
+    {{ diceHand.getLastRoll() }}
+
+{% endblock %}

@@ -1,0 +1,13 @@
+{% extends 'base.html.twig' %}
+
+
+{% block main %}
+    <h1>Result of Game21</h1>
+
+    <p>Result of latest round: </p>
+
+    <p> {{ result }} </p>
+
+    <p> <a href="{{ path('startGame') }}">Play again?</a> </p>
+
+{% endblock %}

@@ -1,0 +1,29 @@
+{% extends 'base.html.twig' %}
+
+
+{% block main %}
+    <h1>My library </h1>
+
+    <p>Printing out my "library"</p>
+
+    <table class="styled-table">
+        <tr>
+            <th>ID</th>
+            <th>Title</th>
+            <th>Author</th>
+            <th>ISBN</th>
+            <th>Picture</th>
+        </tr>
+
+    {% for book in books %}
+        <tr>
+            <td> {{ book.getId() }} </td>
+            <td> {{ book.getTitle() }} </td>
+            <td> {{ book.getAuthor() }} </td>
+            <td> {{ book.getIsbn() }} </td>
+            <td> <a href="{{ book.getPic() }}">Click here for picture</a> </td>
+        </tr>
+    {% endfor %}
+    </table>
+
+{% endblock %}

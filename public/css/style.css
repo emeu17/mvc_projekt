@@ -1,0 +1,80 @@
+body {
+    overflow-y: scroll;
+    width: 800px;
+    margin: 8px auto;
+    padding-left: 1em;
+    border-left: 1px solid #ccc;
+}
+
+main {
+    min-height: 20em;
+}
+
+footer {
+    margin-top: 1em;
+    border-top: 1px solid #ccc;
+    min-height: 4em;
+    text-align: center;
+}
+
+h1 {
+    font-family: sans-serif;
+}
+
+.scoreBoard {
+    background-color: #fff1ad;
+    border: 1px solid #000;
+    padding: 0 1em;
+}
+
+form {
+    margin-top: 2em;
+}
+
+
+/**
+ * Style a dice using UTF-8 characters.
+ */
+.dice-utf8 .dice-1::after { content: "\2680"; }
+.dice-utf8 .dice-2::after { content: "\2681"; }
+.dice-utf8 .dice-3::after { content: "\2682"; }
+.dice-utf8 .dice-4::after { content: "\2683"; }
+.dice-utf8 .dice-5::after { content: "\2684"; }
+.dice-utf8 .dice-6::after { content: "\2685"; }
+
+.dice-utf8 {
+    font-size: 40px;
+}
+
+.dice-utf8 i {
+    font-style: normal;
+}
+
+.styled-table {
+    border-collapse: collapse;
+    margin: 25px 0;
+    font-size: 0.9em;
+    font-family: sans-serif;
+    min-width: 400px;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.15);
+}
+
+.styled-table thead tr {
+    background-color: #009879;
+    color: #ffffff;
+    text-align: left;
+}
+
+.styled-table th,
+.styled-table td {
+    padding: 12px 15px;
+    border: 1px solid #dddddd;
+}
+
+.styled-table tbody tr {
+    border-bottom: 1px solid #dddddd;
+}
+
+.styled-table tbody tr:nth-of-type(even) {
+    background-color: #f3f3f3;
+}

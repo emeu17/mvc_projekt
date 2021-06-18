@@ -1,0 +1,18 @@
+{% extends 'base.html.twig' %}
+
+
+{% block main %}
+    <h1>My dice view </h1>
+
+    {{ dicehand.roll() }}
+    {{ dicehand.getLastRoll() }}
+
+    <h1>Rolling six graphic dices</h1>
+
+    <p class="dice-utf8">
+        {% for gclass in graphclass %}
+            <i class="{{gclass}}"></i>
+        {% endfor %}
+    </p>
+
+{% endblock %}

@@ -1,0 +1,28 @@
+{% extends 'base.html.twig' %}
+
+
+{% block main %}
+    <h1>My dice Highscore </h1>
+
+    <p> Result of dice Highscore: </p>
+
+    <table class="styled-table">
+        <tr>
+            <th>ID</th>
+            <th>Name</th>
+            <th>Player score</th>
+            <th>Computer score</th>
+            <th>Rating player/computer</th>
+        </tr>
+
+    {% for score in scores[:5] %}
+        <tr>
+            <td> {{ score.getId() }} </td>
+            <td> {{ score.getName() }} </td>
+            <td> {{ score.getPlayerScore() }} </td>
+            <td> {{ score.getComputerScore() }} </td>
+            <td> {{ score.comp|number_format(2) }} </td>
+        </tr>
+    {% endfor %}
+    </table>
+{% endblock %}

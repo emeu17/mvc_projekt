@@ -1,0 +1,26 @@
+{% extends 'base.html.twig' %}
+
+
+{% block main %}
+    <h1>Game 21: Throw dices</h1>
+
+    <p>Choose to throw dice(s) or stop at current sum</p>
+
+    {% if sum != 0 %}
+            <p>Last dice throw: {{ throw }} </p>
+    {% endif %}
+
+    <p>Sum: {{ sum }}</p>
+
+    <form method="post" action="{{ path('processThrow') }}">
+        <fieldset>
+            <label>Choose to throw dices again or stop at current sum </label>
+            <p>
+                <input type="submit" name="throw" value="Throw dice(s)">
+                <input type="submit" name="stop" value="Stop round">
+            </p>
+        </fieldset>
+    </form>
+
+
+{% endblock %}

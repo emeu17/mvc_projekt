@@ -1,0 +1,21 @@
+{% extends 'base.html.twig' %}
+
+
+{% block main %}
+    <h1>Save to Highscore</h1>
+
+    <form method="post" action="{{ path('saveScore') }}">
+        <fieldset>
+            <label><h2>Save players name</h2></label>
+            <p>
+                <label for="title">Choose name of player to save:</label>
+                <input id="playerName" type="text" name="playerName">
+            </p>
+            <p>
+                <input type="submit" name="create" value="Save to Highscore">
+            </p>
+        </fieldset>
+    </form>
+
+
+{% endblock %}

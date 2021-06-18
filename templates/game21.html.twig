@@ -1,0 +1,31 @@
+{% extends 'base.html.twig' %}
+
+
+{% block main %}
+    <h1>Game 21</h1>
+
+    <div class="scoreBoard">
+        <h2>Scoreboard</h2>
+        <p>Number of rounds played: {{ session.get('noRounds')}} </p>
+        <p>Player score: {{ session.get('playScore')}} </p>
+        <p>Computer score: {{ session.get('compScore')}} </p>
+        <p><a href="{{ path('resetGame') }}">Reset scoreboard</a></p>
+        <p><a href="{{ path('diceSaveScore') }}">Save to Highscore</a></p>
+    </div>
+
+    <form method="post" action="{{ path('processGame') }}">
+        <fieldset>
+            <label><h2>Start new game</h2></label>
+            <p>
+                <label for="title">Choose number of dices (1 or 2):</label>
+                <input id="dices" type="number" name="dices" value=1 max=2 min=1>
+            </p>
+            <p>
+                <input type="submit" name="create" value="Start game">
+                <input type="reset" value="Reset">
+            </p>
+        </fieldset>
+    </form>
+
+
+{% endblock %}
