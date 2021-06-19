@@ -103,11 +103,11 @@ class Game21Controller extends AbstractController
         $throw = $callable->getLastRoll();
         $sum = $callable->getSum();
 
+        //get winner and set points from betting
         $result = $this->getWinner($callable, $session);
         $session->set('noRounds', 1 + $session->get('noRounds'));
         $session->remove('diceHand');
 
-        $session->set('points', 1 + $session->get('points'));
 
         return $this->render('diceResult.html.twig', [
             'throw' => $throw,
@@ -123,16 +123,19 @@ class Game21Controller extends AbstractController
     public function getWinner($callable, $session): string
     {
         $sum = $callable->getSum();
+        $bet = $session->get('bet');
         if ($callable->getSum() == 21) {
             $res = "CONGRATULATIONS! You got 21!";
             // $winner = "player";
             $session->set('playScore', 1 + $session->get('playScore'));
+            $session->set('points', $session->get('points') + $bet*1.5);
             return $res;
         }
         if ($callable->getSum() > 21) {
             $res = "You passed 21 and lost, sum: " . $sum;
             // $winner = "computer";
             $session->set('compScore', 1 + $session->get('compScore'));
+            $session->set('points', $session->get('points') - $bet);
             return $res;
         }
         // if sum less than 21, simulate computer throws
@@ -141,11 +144,13 @@ class Game21Controller extends AbstractController
             $res = "Computer wins, got sum = " . $computerScore . ", your sum = " . $sum;
             // $winner = "computer";
             $session->set('compScore', 1 + $session->get('compScore'));
+            $session->set('points', $session->get('points') - $bet);
             return $res;
         }
         $res = "You win, computer got sum = " . $computerScore . ", your sum = " . $sum;
         // $winner = "player";
         $session->set('playScore', 1 + $session->get('playScore'));
+        $session->set('points', $session->get('points') + $bet);
         return $res;
     }
 

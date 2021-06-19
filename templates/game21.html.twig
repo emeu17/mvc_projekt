@@ -17,8 +17,8 @@
         <p>Player score: {{ session.get('playScore')}} </p>
         <p>Computer score: {{ session.get('compScore')}} </p>
         <p><b>Points to bet: {{ session.get('points')}} </b></p>
-        <p><a href="{{ path('resetGame') }}">Reset scoreboard</a></p>
-        <p><a href="{{ path('diceSaveScore') }}">Save to Highscore</a></p>
+        <p><a href="{{ path('resetGame') }}">Reset scoreboard</a> |
+        <a href="{{ path('diceSaveScore') }}">Save to Highscore</a></p>
     </div>
 
     <form method="post" action="{{ path('processGame') }}">
@@ -26,18 +26,18 @@
             <label><h2>Start new game</h2></label>
             <p>
                 <label for="title">Choose number of dices (1 or 2):</label>
-                <input id="dices" type="number" name="dices" value=1 max=2 min=1>
+                <input class="input" id="dices" type="number" name="dices" value=1 max=2 min=1>
             </p>
 
             <label><b>Time to make a bet?</b></label>
             <p>
                 <label for="title">Choose how many points you want to bet (0 = no bet):</label>
-                <input id="bet" type="number" name="bet" value=0 max={{session.get('points')}} min=0>
+                <input class="input" id="bet" type="number" name="bet" value=0 max={{session.get('points')}} min=0>
             </p>
 
             <p>
-                <input type="submit" name="create" value="Start game">
-                <input type="reset" value="Reset">
+                <input type="submit" class="button" name="create" value="Start game">
+                <input type="reset" class="button" value="Reset">
             </p>
         </fieldset>
     </form>

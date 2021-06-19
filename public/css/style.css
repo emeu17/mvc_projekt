@@ -123,3 +123,29 @@ form {
 .styled-table tbody tr:nth-of-type(even) {
     background-color: #d9c3e0;
 }
+
+
+.input {
+    font-size: 1em;
+    line-height: 1em;
+    display: block;
+    border: 1px solid #ccc;
+    border-radius: 0.2rem;
+    padding: 0.6rem 0.6rem;
+    box-sizing: border-box;
+    width: 20rem;
+    margin-bottom: 1.4rem;
+}
+
+/*shows green or red if valid/invalid input*/
+.input:valid {
+    border: 1px solid green;
+}
+
+.input:invalid {
+    border: 1px solid red;
+}
+.button {
+    padding: 0.4rem 1rem;
+    margin-right: 1em;
+}
