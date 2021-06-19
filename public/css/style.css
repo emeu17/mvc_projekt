@@ -1,9 +1,13 @@
+@import url('https://fonts.googleapis.com/css2?family=Hind+Siliguri:wght@300&family=Roboto&display=swap');
+
 body {
     overflow-y: scroll;
     width: 800px;
     margin: 8px auto;
     padding-left: 1em;
-    border-left: 1px solid #ccc;
+    border-left: 2px solid #9e02c9;
+    /* background: #f4f4f4; */
+    font-family: 'Hind Siliguri', sans-serif;
 }
 
 main {
@@ -12,24 +16,65 @@ main {
 
 footer {
     margin-top: 1em;
+    padding-top: 1em;
     border-top: 1px solid #ccc;
     min-height: 4em;
     text-align: center;
 }
 
+a:hover {
+    color: #ccc;
+}
+
+nav {
+    padding-bottom: 1em;
+    border-bottom: 1px solid #ccc;
+    /* font-family: Arial, Helvetica, sans-serif; */
+    /* font-family: 'Viaoda Libre', cursive; */
+    font-family: 'Hind Siliguri', sans-serif;
+    font-size: 1.2em;
+}
+
+nav a {
+    color: #96308C;
+    padding: 0.2em;
+}
+
+nav a:hover {
+    color: #ccc;
+}
+
+.active {
+    color: #ef60ff;
+    font-weight: bold;
+}
+
 h1 {
-    font-family: sans-serif;
+    font-family: 'Roboto', sans-serif;
+    color: #632A60;
 }
 
 .scoreBoard {
-    background-color: #fff1ad;
+    background-color: #b985c4;
     border: 1px solid #000;
     padding: 0 1em;
+    position:relative;
+}
+
+.dices {
+    position:absolute;
+    bottom: 1em;
+    right: 2em;
 }
 
 form {
     margin-top: 2em;
 }
+
+.logo h1{
+    color: #9e02c9;
+}
+
 
 
 /**
@@ -76,5 +121,5 @@ form {
 }
 
 .styled-table tbody tr:nth-of-type(even) {
-    background-color: #f3f3f3;
+    background-color: #d9c3e0;
 }
