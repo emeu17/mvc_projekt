@@ -3,13 +3,20 @@
 
 {% block main %}
     <h1>Game 21</h1>
+    <p>Welcome to the game twenty one. You play against the computer and
+        whoever gets closest to 21 wins. If you get the same result
+        as the computer, the computer wins. If you get 21 you win.</p>
 
+    <p>New! You can now make a bet. You start out with 100 points and
+        can bet on yourself winning. If you win you get back double the
+        amount of points. If you get 21 you get 1.5 times the betted amount of points. </p>
     <div class="scoreBoard">
         <img src="../public/images/dices.png" alt="dices" class="dices">
         <h2>Scoreboard</h2>
         <p>Number of rounds played: {{ session.get('noRounds')}} </p>
         <p>Player score: {{ session.get('playScore')}} </p>
         <p>Computer score: {{ session.get('compScore')}} </p>
+        <p><b>Points to bet: {{ session.get('points')}} </b></p>
         <p><a href="{{ path('resetGame') }}">Reset scoreboard</a></p>
         <p><a href="{{ path('diceSaveScore') }}">Save to Highscore</a></p>
     </div>
@@ -21,6 +28,13 @@
                 <label for="title">Choose number of dices (1 or 2):</label>
                 <input id="dices" type="number" name="dices" value=1 max=2 min=1>
             </p>
+
+            <label><b>Time to make a bet?</b></label>
+            <p>
+                <label for="title">Choose how many points you want to bet (0 = no bet):</label>
+                <input id="bet" type="number" name="bet" value=0 max={{session.get('points')}} min=0>
+            </p>
+
             <p>
                 <input type="submit" name="create" value="Start game">
                 <input type="reset" value="Reset">

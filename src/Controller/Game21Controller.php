@@ -25,6 +25,7 @@ class Game21Controller extends AbstractController
         $session->set('noRounds', $session->get('noRounds') ?? 0);
         $session->set('compScore', $session->get('compScore') ?? 0);
         $session->set('playScore', $session->get('playScore') ?? 0);
+        $session->set('points', $session->get('points') ?? 100);
 
         return $this->render('game21.html.twig', [
             'session' => $session,
@@ -51,6 +52,8 @@ class Game21Controller extends AbstractController
     public function processGame(Request $request, SessionInterface $session): RedirectResponse
     {
         $dices = (int) $request->request->get('dices') ?? 2;
+        $bet = (int) $request->request->get('bet') ?? 0;
+        $session->set('bet', $bet);
         $session->set('diceHand', new DiceHand($dices));
 
         return $this->redirectToRoute('diceGame');
@@ -103,6 +106,8 @@ class Game21Controller extends AbstractController
         $result = $this->getWinner($callable, $session);
         $session->set('noRounds', 1 + $session->get('noRounds'));
         $session->remove('diceHand');
+
+        $session->set('points', 1 + $session->get('points'));
 
         return $this->render('diceResult.html.twig', [
             'throw' => $throw,
