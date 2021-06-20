@@ -202,11 +202,13 @@ class Game21Controller extends AbstractController
         $newScoreName = $request->request->get('playerName') ?? "unknown";
         $newScorePlayer = $session->get('playScore');
         $newScoreComputer = $session->get('compScore');
+        $newPoints = $session->get('points');
 
         $highscore = new Score();
         $highscore->setName($newScoreName);
         $highscore->setPlayerScore($newScorePlayer);
         $highscore->setComputerScore($newScoreComputer);
+        $highscore->setPoints($newPoints);
 
         $entityManager->persist($highscore);
         $entityManager->flush();

@@ -31,6 +31,11 @@ use Doctrine\ORM\Mapping as ORM;
         */
        protected $computerScore;
 
+       /**
+        * @ORM\Column(type="integer")
+        */
+       protected $points;
+
 
        public function getId()
        {
@@ -65,5 +70,15 @@ use Doctrine\ORM\Mapping as ORM;
        public function setComputerScore($computerScore)
        {
            $this->computerScore = $computerScore;
+       }
+
+       public function getPoints()
+       {
+           return $this->points;
+       }
+
+       public function setPoints($points)
+       {
+           $this->points = $points;
        }
    }

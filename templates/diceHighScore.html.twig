@@ -13,6 +13,7 @@
             <th>Player score</th>
             <th>Computer score</th>
             <th>Rating player/computer</th>
+            <th>Player points</th>
         </tr>
 
     {% for score in scores[:5] %}
@@ -22,6 +23,7 @@
             <td> {{ score.getPlayerScore() }} </td>
             <td> {{ score.getComputerScore() }} </td>
             <td> {{ score.comp|number_format(2) }} </td>
+            <td> {{ score.getPoints() }} </td>
         </tr>
     {% endfor %}
     </table>

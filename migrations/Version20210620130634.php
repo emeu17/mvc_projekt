@@ -10,7 +10,7 @@ use Doctrine\Migrations\AbstractMigration;
 /**
  * Auto-generated Migration: Please modify to your needs!
  */
-final class Version20210618141753 extends AbstractMigration
+final class Version20210620130634 extends AbstractMigration
 {
     public function getDescription(): string
     {
@@ -21,7 +21,7 @@ final class Version20210618141753 extends AbstractMigration
     {
         // this up() migration is auto-generated, please modify it to your needs
         $this->addSql('CREATE TABLE library (id_book INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, title VARCHAR(50) NOT NULL, author VARCHAR(50) NOT NULL, isbn VARCHAR(50) NOT NULL, pic VARCHAR(200) NOT NULL)');
-        $this->addSql('CREATE TABLE score (id_score INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, name VARCHAR(50) NOT NULL, player_score INTEGER NOT NULL, computer_score INTEGER NOT NULL)');
+        $this->addSql('CREATE TABLE score (id_score INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, name VARCHAR(50) NOT NULL, player_score INTEGER NOT NULL, computer_score INTEGER NOT NULL, points INTEGER NOT NULL)');
     }
 
     public function down(Schema $schema): void
