@@ -36,6 +36,11 @@ use Doctrine\ORM\Mapping as ORM;
         */
        protected $points;
 
+       /**
+        * @ORM\Column(type="string", length=400)
+        */
+       protected $diceStat;
+
 
        public function getId()
        {
@@ -80,5 +85,15 @@ use Doctrine\ORM\Mapping as ORM;
        public function setPoints($points)
        {
            $this->points = $points;
+       }
+
+       public function getDiceStat()
+       {
+           return $this->diceStat;
+       }
+
+       public function setDiceStat($diceStat)
+       {
+           $this->diceStat = $diceStat;
        }
    }

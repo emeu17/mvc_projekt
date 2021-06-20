@@ -14,6 +14,7 @@
             <th>Computer score</th>
             <th>Rating player/computer</th>
             <th>Player points</th>
+            <th>Dice statistic</th>
         </tr>
 
     {% for score in scores[:5] %}
@@ -24,6 +25,7 @@
             <td> {{ score.getComputerScore() }} </td>
             <td> {{ score.comp|number_format(2) }} </td>
             <td> {{ score.getPoints() }} </td>
+            <td> {{ score.getDiceStat() }} </td>
         </tr>
     {% endfor %}
     </table>

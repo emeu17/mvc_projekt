@@ -86,8 +86,15 @@ class Game21Controller extends AbstractController
         }
         $callable = $session->get('diceHand');
         $callable->roll();
+        $sum = $callable->getSum();
+        //save dices
+        if ($sum != 0) {
+            $throw = $callable->getLastRoll();
+            $session->set('dices', $session->get('dices') . $throw . ", ");
+        }
+
         $session->set('diceHand', $callable);
-        if ($callable->getSum() >= 21) {
+        if ($sum >= 21) {
             return $this->redirectToRoute('diceResult');
         }
 
@@ -107,12 +114,14 @@ class Game21Controller extends AbstractController
         $result = $this->getWinner($callable, $session);
         $session->set('noRounds', 1 + $session->get('noRounds'));
         $session->remove('diceHand');
+        $dice_no = $session->get('dices');
 
 
         return $this->render('diceResult.html.twig', [
             'throw' => $throw,
             'sum' => $sum,
             'result' => $result,
+            'dice_no' => $dice_no,
         ]);
     }
 
@@ -203,12 +212,14 @@ class Game21Controller extends AbstractController
         $newScorePlayer = $session->get('playScore');
         $newScoreComputer = $session->get('compScore');
         $newPoints = $session->get('points');
+        $newStat = $session->get('dices');
 
         $highscore = new Score();
         $highscore->setName($newScoreName);
         $highscore->setPlayerScore($newScorePlayer);
         $highscore->setComputerScore($newScoreComputer);
         $highscore->setPoints($newPoints);
+        $highscore->setDiceStat($newStat);
 
         $entityManager->persist($highscore);
         $entityManager->flush();
