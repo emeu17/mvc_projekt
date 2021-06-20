@@ -194,6 +194,14 @@ class Game21Controller extends AbstractController
     }
 
     /**
+     * @Route("/diceGame/diceStat", name="diceStat")
+    */
+    public function diceScoreStat(): Response
+    {
+        return $this->render('diceScoreStat.html.twig');
+    }
+
+    /**
      * @Route("/diceGame/diceSaveScore", name="diceSaveScore")
     */
     public function diceSaveScore(): Response
