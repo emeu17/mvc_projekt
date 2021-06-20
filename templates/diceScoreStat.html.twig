@@ -6,4 +6,13 @@
 
     <p> Result of dice Highscore: </p>
 
+    <p>Id: {{ id }} </p>
+    <p>stats: {{ score.getDiceStat() }}</p>
+    <p>stats again: {{ scoreStat }}</p>
+    <p>Output only numbers: {{ output }} </p>
+
+    <p>Array of dice stat: {{ dump(match) }}</p>
+    <p>My dices: {{ dump(myDices) }} </p>
+
+    <p>Histogram: {{ str }} </p>
 {% endblock %}
