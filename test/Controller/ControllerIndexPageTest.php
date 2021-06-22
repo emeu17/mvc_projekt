@@ -22,5 +22,6 @@ class ControllerIndexPageTest extends WebTestCase
     {
         $controller = new IndexController();
         $this->assertInstanceOf("\App\Controller\IndexController", $controller);
+
     }
 }
