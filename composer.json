@@ -62,7 +62,7 @@
         "sort-packages": true
     },
     "name": "dbwebb/mvc-orm",
-    "description": "A part of the course dbwebb/mvc, adding ORM.",
+    "description": "A part of the course dbwebb/mvc, final project.",
     "autoload": {
         "psr-4": {
             "App\\": "src/",
