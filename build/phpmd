@@ -1,6 +1,6 @@
-C:\Users\emma8\Documents\BTH\dbwebb-kurser\mvc\me\proj\migrations\Version20210618141753.php:20	Avoid using short method names like Version20210618141753::up(). The configured minimum method name length is 3.
-C:\Users\emma8\Documents\BTH\dbwebb-kurser\mvc\me\proj\migrations\Version20210618141753.php:20	Avoid using short method names like Version20210618141753::up(). The configured minimum method name length is 3.
-C:\Users\emma8\Documents\BTH\dbwebb-kurser\mvc\me\proj\migrations\Version20210618141753.php:20	Avoid unused parameters such as '$schema'.
-C:\Users\emma8\Documents\BTH\dbwebb-kurser\mvc\me\proj\migrations\Version20210618141753.php:27	Avoid unused parameters such as '$schema'.
+C:\Users\emma8\Documents\BTH\dbwebb-kurser\mvc\me\proj\migrations\Version20210620134657.php:20	Avoid using short method names like Version20210620134657::up(). The configured minimum method name length is 3.
+C:\Users\emma8\Documents\BTH\dbwebb-kurser\mvc\me\proj\migrations\Version20210620134657.php:20	Avoid using short method names like Version20210620134657::up(). The configured minimum method name length is 3.
+C:\Users\emma8\Documents\BTH\dbwebb-kurser\mvc\me\proj\migrations\Version20210620134657.php:20	Avoid unused parameters such as '$schema'.
+C:\Users\emma8\Documents\BTH\dbwebb-kurser\mvc\me\proj\migrations\Version20210620134657.php:27	Avoid unused parameters such as '$schema'.
 C:\Users\emma8\Documents\BTH\dbwebb-kurser\mvc\me\proj\src\Kernel.php:14	Avoid assigning values to variables in if clauses and the like (line '22', column '27').
 C:\Users\emma8\Documents\BTH\dbwebb-kurser\mvc\me\proj\src\Kernel.php:27	Avoid assigning values to variables in if clauses and the like (line '34', column '27').
