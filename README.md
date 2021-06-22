@@ -1,3 +1,8 @@
+[![Build Status](https://travis-ci.com/emeu17/mvc_projekt.svg?branch=main)](https://travis-ci.com/emeu17/mvc_projekt)
+[![Scrutinizer Code Quality](https://scrutinizer-ci.com/g/emeu17/mvc_projekt/badges/quality-score.png?b=main)](https://scrutinizer-ci.com/g/emeu17/mvc_projekt/?branch=main)
+[![Code Coverage](https://scrutinizer-ci.com/g/emeu17/mvc_projekt/badges/coverage.png?b=main)](https://scrutinizer-ci.com/g/emeu17/mvc_projekt/?branch=main)
+[![Build Status](https://scrutinizer-ci.com/g/emeu17/mvc_projekt/badges/build.png?b=main)](https://scrutinizer-ci.com/g/emeu17/mvc_projekt/build-status/main)
+
 MVC Project Spring 2021
 ==========
 
@@ -8,7 +13,7 @@ Background
 
 This is the final project in the course MVC. It is mainly built using PHP,
 HTML and CSS. Symfony is used as framework. In order to connect to and read/update
-in the MySQL database on the student server the Doctrine ORM (Object Relation Manager) is used.
+in the MySQL database on the student server the Doctrine ORM (Object-Relational Mapping) is used.
 
 The application
 -------------
