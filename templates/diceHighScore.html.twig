@@ -2,9 +2,9 @@
 
 
 {% block main %}
-    <h1>My dice Highscore </h1>
+    <h1>Highscore </h1>
 
-    <p> Result of dice Highscore: </p>
+    <p> Shows up to 5 players (top five): </p>
 
     <table class="styled-table">
         <tr>
@@ -25,7 +25,7 @@
             <td> {{ score.getComputerScore() }} </td>
             <td> {{ score.comp|number_format(2) }} </td>
             <td> {{ score.getPoints() }} </td>
-            <td> {{ score.getDiceStat() }} <a href="{{ path('diceStat') }}?id={{ score.getId() }}">Click here</a></td>
+            <td> <a href="{{ path('diceStat') }}?id={{ score.getId() }}">Click here</a></td>
         </tr>
     {% endfor %}
     </table>

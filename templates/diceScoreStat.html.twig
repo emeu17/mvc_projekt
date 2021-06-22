@@ -4,15 +4,18 @@
 {% block main %}
     <h1>Statistics</h1>
 
-    <p> Result of dice Highscore: </p>
+    <p>Highscore Id: {{ id }} </p>
+    <p>Player name: {{ name }} </p>
 
-    <p>Id: {{ id }} </p>
-    <p>stats: {{ score.getDiceStat() }}</p>
-    <p>stats again: {{ scoreStat }}</p>
-    <p>Output only numbers: {{ output }} </p>
+    <p><b> Statistics over players ( {{ name }} ) rolled dices.</b></p>
 
-    <p>Array of dice stat: {{ dump(match) }}</p>
-    <p>My dices: {{ dump(myDices) }} </p>
+    {% for dice, res in diceStat %}
+        {{ dice }} : {{ res }}<br>
+    {% endfor %}
 
-    <p>Histogram: {{ str }} </p>
+    <p>Histogram over players rolled dices: </p>
+    {% for row in hist %}
+        {{ row }} <br>
+    {% endfor %}
+
 {% endblock %}

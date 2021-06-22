@@ -205,58 +205,49 @@ class Game21Controller extends AbstractController
             ->find($scoreId);
 
         $scoreStat = $score->getDiceStat();
+        $diceStat = $this->sortStat($scoreStat);
 
-        $outputString = preg_replace('/[^0-9]/', '', $score->getDiceStat());
+        //create histogram
+        $hist = $this->createHist($diceStat);
 
-        preg_match_all('!\d+!', $score->getDiceStat(), $matches);
-        sort($matches[0]);
-
-        $myDices = array_count_values($matches[0]);
-        // sort($myDices);
-
-        $str = "";
-        for ($i = 1; $i <= 6; $i++) {
-            $str .= $i . ": ";
-            if (array_key_exists($i, $myDices)) {
-                for ($j = 0; $j < $myDices[$i]; $j++) {
-                    $str .= "*";
-                }
-            }
-            $str .= nl2br("\n");
-        }
+        //get player name
+        $name = $score->getName();
 
         return $this->render('diceScoreStat.html.twig', [
             'id' => $scoreId,
-            'score' => $score,
-            'scoreStat' => $scoreStat,
-            'output' => $outputString,
-            'match' => $matches[0],
-            'myDices' => $myDices,
-            'str' => $str,
+            'score' => $scoreStat,
+            'diceStat' => $diceStat,
+            'hist' => $hist,
+            'name' => $name,
         ]);
     }
 
-    /**
-     * Print out the results of players played rounds
-     * print out with stars for no of dices of each face, eg:
-     * 1: **
-     * 2: ***
-     */
-    public function printResultStars($currentSet): string
+    public function sortStat($stat): array
     {
-        $str = "";
+        // $outputString = preg_replace('/[^0-9]/', '', $score->getDiceStat());
 
-        for ($i = 1; $i < 6; $i++) {
-            $noDices = count($_SESSION["yatzyResult"][$i]);
-            $str .= $i . ": ";
-            for ($j = 0; $j < $noDices; $j++) {
-                if ($i == $_SESSION["yatzyResult"][$i][$j]) {
-                    $str .= "*";
+        //get all numbers from string with numbers like 1, 3, 4, 6...
+        preg_match_all('!\d+!', $stat, $matches);
+        //sort values low ot high
+        sort($matches[0]);
+        //count values at each value 1 through 6
+        $myDices = array_count_values($matches[0]);
+        return $myDices;
+    }
+
+    //create histogram
+    public function createHist($myDices): array
+    {
+        $hist = [];
+        for ($i = 1; $i <= 6; $i++) {
+            $hist[$i] = $i . ": ";
+            if (array_key_exists($i, $myDices)) {
+                for ($j = 0; $j < $myDices[$i]; $j++) {
+                    $hist[$i] .= "*";
                 }
             }
-            $str .= nl2br("\n");
         }
-        return $str;
+        return $hist;
     }
 
     /**
