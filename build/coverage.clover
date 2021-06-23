@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<coverage generated="1624382239">
-  <project timestamp="1624382239">
+<coverage generated="1624457757">
+  <project timestamp="1624457757">
     <file name="C:\Users\emma8\Documents\BTH\dbwebb-kurser\mvc\me\proj\config\bundles.php">
       <line num="4" type="stmt" count="0"/>
       <metrics loc="15" ncloc="15" classes="0" methods="0" coveredmethods="0" conditionals="0" coveredconditionals="0" statements="1" coveredstatements="0" elements="1" coveredelements="0"/>
@@ -66,7 +66,7 @@
     </file>
     <file name="C:\Users\emma8\Documents\BTH\dbwebb-kurser\mvc\me\proj\src\Controller\Game21Controller.php">
       <class name="App\Controller\Game21Controller" namespace="global">
-        <metrics complexity="15" methods="9" coveredmethods="0" conditionals="0" coveredconditionals="0" statements="83" coveredstatements="0" elements="92" coveredelements="0"/>
+        <metrics complexity="15" methods="9" coveredmethods="0" conditionals="0" coveredconditionals="0" statements="81" coveredstatements="0" elements="90" coveredelements="0"/>
       </class>
       <line num="22" type="method" name="startgame" visibility="public" complexity="1" crap="2" count="0"/>
       <line num="25" type="stmt" count="0"/>
@@ -112,12 +112,10 @@
       <line num="114" type="stmt" count="0"/>
       <line num="115" type="stmt" count="0"/>
       <line num="116" type="stmt" count="0"/>
-      <line num="117" type="stmt" count="0"/>
       <line num="120" type="stmt" count="0"/>
       <line num="121" type="stmt" count="0"/>
       <line num="122" type="stmt" count="0"/>
       <line num="123" type="stmt" count="0"/>
-      <line num="124" type="stmt" count="0"/>
       <line num="132" type="method" name="getWinner" visibility="public" complexity="4" crap="20" count="0"/>
       <line num="134" type="stmt" count="0"/>
       <line num="135" type="stmt" count="0"/>
@@ -160,7 +158,7 @@
       <line num="196" type="stmt" count="0"/>
       <line num="198" type="stmt" count="0"/>
       <line num="199" type="stmt" count="0"/>
-      <metrics loc="201" ncloc="173" classes="1" methods="9" coveredmethods="0" conditionals="0" coveredconditionals="0" statements="83" coveredstatements="0" elements="92" coveredelements="0"/>
+      <metrics loc="201" ncloc="173" classes="1" methods="9" coveredmethods="0" conditionals="0" coveredconditionals="0" statements="81" coveredstatements="0" elements="90" coveredelements="0"/>
     </file>
     <file name="C:\Users\emma8\Documents\BTH\dbwebb-kurser\mvc\me\proj\src\Controller\HighScoreController.php">
       <class name="App\Controller\HighScoreController" namespace="global">
@@ -439,6 +437,6 @@
       <line num="20" type="stmt" count="0"/>
       <metrics loc="50" ncloc="17" classes="1" methods="1" coveredmethods="0" conditionals="0" coveredconditionals="0" statements="2" coveredstatements="0" elements="3" coveredelements="0"/>
     </file>
-    <metrics files="25" loc="1139" ncloc="853" classes="14" methods="63" coveredmethods="19" conditionals="0" coveredconditionals="0" statements="258" coveredstatements="49" elements="321" coveredelements="68"/>
+    <metrics files="25" loc="1139" ncloc="853" classes="14" methods="63" coveredmethods="19" conditionals="0" coveredconditionals="0" statements="256" coveredstatements="49" elements="319" coveredelements="68"/>
   </project>
 </coverage>
