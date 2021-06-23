@@ -21,7 +21,7 @@ class HighScoreController extends AbstractController
     */
     public function cmp($value1, $value2)
     {
-        return $value1->comp < $value2->comp;
+        return $value1->getComp() < $value2->getComp();
     }
 
     /**
@@ -32,11 +32,6 @@ class HighScoreController extends AbstractController
         $scores = $this->getDoctrine()
             ->getRepository(Score::class)
             ->findAll();
-
-        //add comparison between no of rounds won player vs computer
-        foreach ($scores as $score) {
-                $score->comp = ($score->getComputerScore() != 0) ? $score->getPlayerScore() / $score->getComputerScore() :  $score->getPlayerScore() / 1;
-        }
 
         usort($scores, array($this, "cmp"));
 

@@ -184,6 +184,8 @@ class Game21Controller extends AbstractController
         $newScoreComputer = $session->get('compScore');
         $newPoints = $session->get('points');
         $newStat = $session->get('dices');
+        //add comparison between no of rounds won player vs computer
+        $newComp = ($session->get('compScore') != 0) ? $session->get('playScore') / $session->get('compScore') :  $session->get('playScore') / 1;
 
         $highscore = new Score();
         $highscore->setName($newScoreName);
@@ -191,6 +193,7 @@ class Game21Controller extends AbstractController
         $highscore->setComputerScore($newScoreComputer);
         $highscore->setPoints($newPoints);
         $highscore->setDiceStat($newStat);
+        $highscore->setComp($newComp);
 
         $entityManager->persist($highscore);
         $entityManager->flush();

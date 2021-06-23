@@ -41,6 +41,11 @@ use Doctrine\ORM\Mapping as ORM;
         */
        protected $diceStat;
 
+       /**
+        * @ORM\Column(type="decimal")
+        */
+       protected $comp;
+
 
        public function getId()
        {
@@ -95,5 +100,15 @@ use Doctrine\ORM\Mapping as ORM;
        public function setDiceStat($diceStat)
        {
            $this->diceStat = $diceStat;
+       }
+
+       public function getComp()
+       {
+           return $this->comp;
+       }
+
+       public function setComp($comp)
+       {
+           $this->comp = $comp;
        }
    }
