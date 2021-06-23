@@ -13,6 +13,8 @@
     </head>
     <body>
         <header>
+            <!-- <img src="../public/images/dices_purple.png" alt="dices" class="dices_right"> -->
+            <img src="{{ asset('images/dices_purple.png') }}" alt="dices" class="dices_right">
             <div class="logo">
                 <h1>Emeu17 MVC Project</h1>
             </div>
@@ -30,7 +32,6 @@
                 <a {{ route ==  'dice_view' ? 'class="active"' }} href="{{ path('dice_view') }}">
                     Dice
                 </a> |
-
                 <a {{ route ==  'books' ? 'class="active"' }} href="{{ path('books') }}">
                     Books
                 </a>
