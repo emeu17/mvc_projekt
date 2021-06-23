@@ -48,4 +48,4 @@ change in the following files:
 * .env - uncomment the *DATABASE_URL* for sqlite
 * config/packages/doctrine.yaml - uncomment the *url:* and instead comment everything else under the dbal-section.
 
-This way you will use a database that is saved in the file var/data.db. After that you can access the application from the folder public/.
+This way you will use a database that is saved in the file var/data.db. You also need to through the terminal run the *composer install*. After that you can access the application from the folder public/.
