@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<coverage generated="1624457757">
-  <project timestamp="1624457757">
+<coverage generated="1624458887">
+  <project timestamp="1624458887">
     <file name="C:\Users\emma8\Documents\BTH\dbwebb-kurser\mvc\me\proj\config\bundles.php">
       <line num="4" type="stmt" count="0"/>
       <metrics loc="15" ncloc="15" classes="0" methods="0" coveredmethods="0" conditionals="0" coveredconditionals="0" statements="1" coveredstatements="0" elements="1" coveredelements="0"/>
