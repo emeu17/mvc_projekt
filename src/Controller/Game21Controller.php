@@ -114,14 +114,14 @@ class Game21Controller extends AbstractController
         $result = $this->getWinner($callable, $session);
         $session->set('noRounds', 1 + $session->get('noRounds'));
         $session->remove('diceHand');
-        $diceNo = $session->get('dices');
+        // $diceNo = $session->get('dices');
 
 
         return $this->render('diceResult.html.twig', [
             'throw' => $throw,
             'sum' => $sum,
             'result' => $result,
-            'dice_no' => $diceNo,
+            // 'dice_no' => $diceNo,
         ]);
     }
 
